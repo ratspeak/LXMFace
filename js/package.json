@@ -1,0 +1,25 @@
+{
+  "name": "lxmface",
+  "version": "0.1.0",
+  "description": "Deterministic identicon generator for LXMF/Reticulum addresses",
+  "main": "lxmface.js",
+  "module": "lxmface.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ratspeak/lxmface"
+  },
+  "keywords": [
+    "identicon",
+    "avatar",
+    "lxmf",
+    "reticulum",
+    "blockies",
+    "mesh-network"
+  ],
+  "files": [
+    "lxmface.js",
+    "index.d.ts"
+  ]
+}
