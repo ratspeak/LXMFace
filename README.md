@@ -4,6 +4,11 @@
 
 **Deterministic visual identities for [LXMF](https://github.com/markqvist/lxmf) / [Reticulum](https://reticulum.network/) addresses**
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Rust](https://img.shields.io/badge/rust-1.85+-DEA584.svg)](https://www.rust-lang.org/)
+[![JavaScript](https://img.shields.io/badge/javascript-ES5+-F7DF1E.svg)](js/lxmface.js)
+[![Status: Stable](https://img.shields.io/badge/status-stable-brightgreen.svg)](https://github.com/ratspeak/lxmface)
+
 <br>
 
 <img src="assets/identicons.svg" alt="LXMFace identicons generated from different LXMF addresses" width="800">
