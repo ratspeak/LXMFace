@@ -35,11 +35,11 @@ mod tests {
     fn grid_is_symmetric() {
         let mut rng = Xorshift128::new("test_symmetry");
         let grid = create_grid(&mut rng);
-        for y in 0..GRID_SIZE {
+        for (y, row) in grid.iter().enumerate() {
             for x in 0..GRID_SIZE {
                 assert_eq!(
-                    grid[y][x],
-                    grid[y][GRID_SIZE - 1 - x],
+                    row[x],
+                    row[GRID_SIZE - 1 - x],
                     "row {} not symmetric at x={}",
                     y,
                     x
