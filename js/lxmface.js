@@ -1,6 +1,9 @@
 /**
  * LXMFace — Deterministic identicon generator for LXMF/Reticulum addresses.
- * Algorithm adapted from https://github.com/download13/blockies (MIT license).
+ * Algorithm adapted from https://github.com/download13/blockies.
+ *
+ * Use the same case-sensitive ASCII address seed as Rust for matching output.
+ * Addresses are not validated; arbitrary Unicode seeds can differ across languages.
  *
  * @param {string} seed - Hash string (typically an LXMF hex address)
  * @param {number} size - SVG width/height in pixels

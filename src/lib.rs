@@ -2,9 +2,14 @@
 //!
 //! Deterministic identicon generator for LXMF/Reticulum addresses.
 //!
-//! Produces symmetric, circular SVG avatars from hash strings.
-//! The same input always generates the same output, across both
-//! the Rust and JavaScript implementations.
+//! Produces symmetric, circular SVG avatars from hash strings. The Rust and
+//! JavaScript implementations agree for the same canonical ASCII address seed.
+//! Seeds are case-sensitive and are not validated as addresses. Arbitrary Unicode
+//! seeds can differ because Rust uses scalar values and JavaScript uses UTF-16
+//! code units.
+//!
+//! Keep the default `std` feature enabled. This source revision does not compile
+//! with `default-features = false`.
 //!
 //! ```
 //! let svg = lxmface::lxmface_svg("a7b3c9d1e5f20681943ab2de77fc8e01", 64);
@@ -46,8 +51,9 @@ pub struct LxmfaceData {
 
 /// Generate an SVG identicon string from a seed hash and pixel size.
 ///
-/// The seed is typically an LXMF hex address. The returned string is a
-/// self-contained SVG document that can be embedded directly in HTML.
+/// The seed is typically an LXMF hex address and is used without validation or
+/// case normalization. The returned string is a self-contained SVG document
+/// with equal width and height, set to `size` pixels.
 pub fn lxmface_svg(seed: &str, size: u32) -> alloc::string::String {
     let mut rng = prng::Xorshift128::new(seed);
     let color = color::create_color(&mut rng);

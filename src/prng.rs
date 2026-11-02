@@ -8,7 +8,10 @@ pub struct Xorshift128 {
 }
 
 impl Xorshift128 {
-    /// Seed the PRNG from a string, matching JS `seedRand()`.
+    /// Seed the PRNG from Unicode scalar values.
+    ///
+    /// ASCII seeds match JS `seedRand()`. Supplementary Unicode characters
+    /// differ from JavaScript's UTF-16 code-unit iteration.
     ///
     /// The seeding operation `s[i%4] = (s[i%4] << 5) - s[i%4] + charCode`
     /// is equivalent to `s[i%4] * 31 + charCode` using i32 wrapping arithmetic.
